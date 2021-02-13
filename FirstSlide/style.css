@@ -8,7 +8,7 @@
 }
 .navigation
 {
-  position: flex;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,6 +16,13 @@
   background: #111;
   transition: 0.2s;
   display: flex;
+  visibility: hidden;
+  opacity: 0;
+}
+.navigation.active
+{
+  visibility: visible;
+  opacity: 1;
 }
 .navigation .navAria
 {
@@ -47,6 +54,26 @@
 {
   background: #905c49;
 }
+.navigation .navAria ul li:nth-child(2)::before
+{
+  background: #ffde0f;
+}
+.navigation .navAria ul li:nth-child(3)::before
+{
+  background: #d28759;
+}
+.navigation .navAria ul li:nth-child(4)::before
+{
+  background: #72a785;
+}
+.navigation .navAria ul li:nth-child(5)::before
+{
+  background: #01080e;
+}
+.navigation .navAria ul li:nth-child(6)::before
+{
+  background: #137ac7;
+}
 .navigation .navAria ul li:hover::before
 {
   opacity: 1;
@@ -76,4 +103,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.menuToggle 
+{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: #000 url(./img/menu.png);
+  z-index: 1000;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.menuToggle.active
+{
+  background: #000 url(./img/close.png);
+  z-index: 1000;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
 }
